@@ -1,0 +1,29 @@
+{% extends "admin/base.html" %}
+{% block title %}写真をアップロード{% endblock %}
+{% block admin %}
+<h1>⬆️ 写真をアップロード（管理者）</h1>
+<p class="lead">管理者がアップロードした写真は、すぐに公開されます。</p>
+<div class="card narrow">
+  <form method="post" enctype="multipart/form-data">
+    <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+    <label class="f" for="year_id">年度</label>
+    <select id="year_id" name="year_id" required>
+      <option value="">選択してください</option>
+      {% for y in years %}<option value="{{ y.id }}">{{ y.year }}年</option>{% endfor %}
+    </select>
+    <label class="f" for="user_id">学生（任意）</label>
+    <select id="user_id" name="user_id">
+      <option value="">管理者（公式写真）</option>
+      {% for s in students %}<option value="{{ s.id }}">{{ s.name }}（{{ s.year_num or '-' }}年）</option>{% endfor %}
+    </select>
+    <label class="f" for="title">タイトル</label>
+    <input id="title" type="text" name="title" maxlength="80" required>
+    <label class="f" for="description">説明</label>
+    <textarea id="description" name="description" maxlength="1000"></textarea>
+    <label class="f" for="photoInput">写真</label>
+    <input id="photoInput" type="file" name="photo" accept="image/*" required>
+    <img id="preview" class="preview" alt="preview">
+    <div class="mt row"><button class="btn">アップロードして公開</button><a class="btn gray" href="{{ url_for('admin_memories') }}">キャンセル</a></div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "admin/base.html" %}
+{% block title %}旅行記録の管理{% endblock %}
+{% block admin %}
+<h1>📸 旅行記録の管理</h1>
+<p class="lead">写真の承認・却下、タイトルと説明の編集、削除ができます。 <a class="btn sm" href="{{ url_for('admin_memory_new') }}">＋ 写真をアップロード</a></p>
+
+<form class="filters" method="get">
+  <select name="year_id" onchange="this.form.submit()">
+    <option value="">すべての年度</option>
+    {% for y in years %}<option value="{{ y.id }}" {{ 'selected' if year_id == y.id }}>{{ y.year }}年</option>{% endfor %}
+  </select>
+  <select name="status" onchange="this.form.submit()">
+    <option value="">すべての状態</option>
+    <option value="pending" {{ 'selected' if status == 'pending' }}>承認待ち</option>
+    <option value="approved" {{ 'selected' if status == 'approved' }}>公開中</option>
+    <option value="rejected" {{ 'selected' if status == 'rejected' }}>却下</option>
+  </select>
+</form>
+
+<div class="card table-wrap">
+  <table class="t">
+    <tr><th>写真</th><th>タイトル / 投稿者</th><th>年度</th><th>状態</th><th>❤</th><th>💬</th><th>操作</th></tr>
+    {% for m in memories %}
+    <tr>
+      <td><img class="thumb" src="{{ m.photo|photo_url }}" alt=""></td>
+      <td><a href="{{ url_for('memory_view', mid=m.id) }}">{{ m.title }}</a><br><small>{{ m.author }}</small></td>
+      <td>{{ m.year_num }}</td>
+      <td><span class="badge {{ m.status }}">{{ {'pending':'承認待ち','approved':'公開中','rejected':'却下'}[m.status] }}</span></td>
+      <td>{{ m.like_count }}</td><td>{{ m.comment_count }}</td>
+      <td class="row">
+        {% if m.status != 'approved' %}
+        <form class="inline" method="post" action="{{ url_for('admin_memory_status', mid=m.id) }}">
+          <input type="hidden" name="_csrf" value="{{ csrf_token() }}"><input type="hidden" name="status" value="approved">
+          <button class="btn sm green">承認</button>
+        </form>{% endif %}
+        {% if m.status != 'rejected' %}
+        <form class="inline" method="post" action="{{ url_for('admin_memory_status', mid=m.id) }}">
+          <input type="hidden" name="_csrf" value="{{ csrf_token() }}"><input type="hidden" name="status" value="rejected">
+          <button class="btn sm gray">却下</button>
+        </form>{% endif %}
+        <a class="btn sm ghost" href="{{ url_for('admin_memory_edit', mid=m.id) }}">編集</a>
+        <form class="inline" method="post" action="{{ url_for('admin_memory_delete', mid=m.id) }}" onsubmit="return confirm('この記録を削除しますか？')">
+          <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+          <button class="btn sm red">削除</button>
+        </form>
+      </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="7" class="center">該当する記録がありません。</td></tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

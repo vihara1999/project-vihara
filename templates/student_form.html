@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+{% block title %}{{ '学生を登録' if is_new else '学生を編集' }}{% endblock %}
+{% block admin %}
+<h1>{{ '➕ 学生を登録' if is_new else '✏️ 学生を編集' }}</h1>
+<div class="card narrow">
+  <form method="post">
+    <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+    <label class="f" for="name">名前</label>
+    <input id="name" type="text" name="name" required maxlength="50" value="{{ s.get('name','') }}">
+    <label class="f" for="email">メールアドレス</label>
+    <input id="email" type="email" name="email" required value="{{ s.get('email','') }}">
+    <label class="f" for="year_id">年度</label>
+    <select id="year_id" name="year_id" required>
+      <option value="">選択してください</option>
+      {% for y in years %}<option value="{{ y.id }}" {{ 'selected' if s.get('year_id')|string == y.id|string }}>{{ y.year }}年</option>{% endfor %}
+    </select>
+    <label class="f" for="password">{{ 'パスワード（空欄なら自動生成）' if is_new else '新しいパスワード（変更する場合のみ）' }}</label>
+    <input id="password" type="text" name="password" minlength="8" autocomplete="off">
+    <label class="f" for="bio">自己紹介（任意）</label>
+    <textarea id="bio" name="bio" maxlength="300">{{ s.get('bio','') }}</textarea>
+    <div class="mt row"><button class="btn">保存</button><a class="btn gray" href="{{ url_for('admin_students') }}">キャンセル</a></div>
+  </form>
+</div>
+{% endblock %}

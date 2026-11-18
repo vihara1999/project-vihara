@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="subnav"><div class="subnav-inner">
+  {% set ep = request.endpoint %}
+  <a href="{{ url_for('admin_dashboard') }}" class="{{ 'active' if ep == 'admin_dashboard' }}">📊 ダッシュボード</a>
+  <a href="{{ url_for('admin_years') }}" class="{{ 'active' if ep == 'admin_years' }}">📅 年度管理</a>
+  <a href="{{ url_for('admin_students') }}" class="{{ 'active' if ep and ep.startswith('admin_student') }}">🎓 学生管理</a>
+  <a href="{{ url_for('admin_memories') }}" class="{{ 'active' if ep and ep.startswith('admin_memor') }}">📸 旅行記録</a>
+  <a href="{{ url_for('admin_comments') }}" class="{{ 'active' if ep == 'admin_comments' }}">💬 コメント</a>
+</div></div>
+<div class="page">{% block admin %}{% endblock %}</div>
+{% endblock %}

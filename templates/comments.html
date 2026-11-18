@@ -1,0 +1,28 @@
+{% extends "admin/base.html" %}
+{% block title %}コメント管理{% endblock %}
+{% block admin %}
+<h1>💬 コメント管理</h1>
+<p class="lead">不適切なコメントを削除できます。（全 {{ comments|length }} 件）</p>
+<div class="card table-wrap">
+  <table class="t">
+    <tr><th>投稿者</th><th>コメント</th><th>投稿先</th><th>日時</th><th></th></tr>
+    {% for c in comments %}
+    <tr>
+      <td>{{ c.author }}</td>
+      <td style="max-width:340px;white-space:pre-wrap;">{{ c.body }}</td>
+      <td><a href="{{ url_for('memory_view', mid=c.memory_id) }}">{{ c.memory_title }}</a> ({{ c.year_num }})</td>
+      <td>{{ c.created_at }}</td>
+      <td>
+        <form class="inline" method="post" action="{{ url_for('comment_delete', cid=c.id) }}" onsubmit="return confirm('削除しますか？')">
+          <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <button class="btn sm red">削除</button>
+        </form>
+      </td>
+    </tr>
+    {% else %}
+    <tr><td colspan="5" class="center">コメントはまだありません。</td></tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

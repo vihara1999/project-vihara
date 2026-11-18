@@ -3,399 +3,930 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>清水・駿河湾クルーズ 日帰り旅行の見どころ紹介</title>
+  <title>清水・駿河湾クルーズ 日帰り旅行</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #333333; background-color: #f4f7f9; }
-    
-    .hero {
-      background-image: linear-gradient(rgba(0, 119, 182, 0.5), rgba(0, 180, 216, 0.5)), url('images/fuji.jpg');
-      background-size: cover; background-position: center;
-      color: #ffffff; text-align: center; padding: 100px 20px;
-    }
-    .hero-sub { font-size: 1.3rem; letter-spacing: 0.1em; opacity: 0.9; margin-bottom: 8px; }
-    .hero-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; }
-    .hero-desc { font-size: 1.5rem; opacity: 0.95; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.7; color: #333333; background-color: #f4f7f9; }
 
-    .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-    .section-title { text-align: center; font-size: 1.8rem; color: #0077b6; margin-bottom: 30px; position: relative; }
-    .section-title::after { content: ""; display: block; width: 50px; height: 3px; background: #00b4d8; margin: 10px auto 0; border-radius: 2px; }
+.hero {
+  background-image: linear-gradient(rgba(0, 119, 182, 0.5), rgba(0, 180, 216, 0.5)), url('images/fuji.jpg');
+  background-size: cover; background-position: center;
+  color: #ffffff; text-align: center; padding: 100px 20px;
+}
+.hero-sub { font-size: 1.3rem; letter-spacing: 0.1em; opacity: 0.9; margin-bottom: 8px; }
+.hero-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 12px; }
+.hero-desc { font-size: 1.5rem; opacity: 0.95; }
 
-    .spots-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-      max-width: 850px;
-      margin: 0 auto 50px;
-    }
-    
-    /* スポットカード */
-    .spot-card {
-      background: #ffffff; border-radius: 12px; overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); display: flex; flex-direction: column;
-      min-height: 400px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; text-decoration: none; color: inherit;
-    }
-    .spot-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); }
-    
-    .spot-tag { background: #0077b6; color: #ffffff; font-size: 0.8rem; font-weight: bold; padding: 4px 12px; align-self: flex-start; margin: 16px 0 0 16px; border-radius: 20px; }
-    .spot-body {
-      padding: 16px 20px 24px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .spot-title { font-size: 1.2rem; text-align: center; margin-bottom: 10px; color: #1a1a1a; }
-    .spot-text { font-size: 0.92rem; color: #555555; }
-    .spot-link {
-      display: block;
-      text-align: right;
-      color: #0077b6;
-      font-weight: bold;
-      margin-top: auto;
-      padding-top: 12px;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
-    }
+.container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+.section-title { text-align: center; font-size: 1.8rem; color: #0077b6; margin-bottom: 30px; position: relative; }
+.section-title::after { content: ""; display: block; width: 50px; height: 3px; background: #00b4d8; margin: 10px auto 0; border-radius: 2px; }
 
-    .spot-card:hover .spot-link {
-      color: #00b4d8;
-      text-decoration: underline;
-    }
+.spots-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 850px;
+  margin: 0 auto 50px;
+}
 
-    .info-box { background: #e8f4f8; border-left: 4px solid #0077b6; padding: 20px; border-radius: 4px; margin-bottom: 40px; }
-    .info-box h3 { font-size: 1.1rem; color: #0077b6; margin-bottom: 8px; }
-    .info-list { list-style: none; font-size: 0.95rem; }
-    .info-list li { margin-bottom: 6px; }
+/* スポットカード */
+.spot-card {
+  background: #ffffff; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); display: flex; flex-direction: column;
+  min-height: 400px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer; text-decoration: none; color: inherit;
+}
+.spot-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); }
 
-    footer { text-align: center; padding: 25px 20px; background: #1e293b; color: #94a3b8; font-size: 0.85rem; }
+.spot-tag { background: #0077b6; color: #ffffff; font-size: 0.8rem; font-weight: bold; padding: 4px 12px; align-self: flex-start; margin: 16px 0 0 16px; border-radius: 20px; }
+.spot-body {
+  padding: 16px 20px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.spot-title { font-size: 1.2rem; text-align: center; margin-bottom: 10px; color: #1a1a1a; }
+.spot-text { font-size: 0.92rem; color: #555555; }
+.spot-link {
+  display: block;
+  text-align: right;
+  color: #0077b6;
+  font-weight: bold;
+  margin-top: auto;
+  padding-top: 12px;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+.spot-card:hover .spot-link { color: #00b4d8; text-decoration: underline; }
 
+.info-box { background: #e8f4f8; border-left: 4px solid #0077b6; padding: 20px; border-radius: 4px; margin-bottom: 40px; }
+.info-box h3 { font-size: 1.1rem; color: #0077b6; margin-bottom: 8px; }
+.info-list { list-style: none; font-size: 0.95rem; }
+.info-list li { margin-bottom: 6px; }
 
-    /* 参加者の感想 (2x2 Grid) */
-    .reviews-section { margin: 60px auto 50px; max-width: 900px; }
-    .review-select-container { 
-      text-align: center; 
-      margin-bottom: 25px; 
-    }
-    .review-select-container label { 
-      font-weight: bold; 
-      color: #0077b6; 
-      margin-right: 10px; 
-      font-size: 1rem; 
-    }
-    .review-year-select { 
-      padding: 8px 16px; 
-      border: 1px solid #0077b6; 
-      border-radius: 8px; 
-      font-size: 1rem; 
-      color: #0077b6; 
-      background: #ffffff; 
-      cursor: pointer; 
-      display: inline-block; 
-      vertical-align: middle;
-    }
+footer { text-align: center; padding: 25px 20px; background: #1e293b; color: #94a3b8; font-size: 0.85rem; }
 
-    .review-grid { 
-      display: grid; 
-      grid-template-columns: repeat(2, minmax(0, 1fr)); 
-      gap: 20px; 
-      max-width: 850px;
-      margin: 0 auto;
-    }
-    .review-card { 
-      background: #ffffff; 
-      border-radius: 12px; 
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); 
-      display: flex;
-      flex-direction: column;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .review-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    }
-    .review-card-body {
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .review-student-name {
-      font-size: 0.95rem;
-      color: #0077b6;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-    .review-topic-title { 
-      color: #555555; 
-      font-size: 0.9rem; 
-      text-align: right;
-      font-weight: bold; /* ← Yaha bold thapne */
-    }
-    .review-card-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .review-note { text-align: center; color: #888888; font-size: 0.8rem; margin-top: 25px; }
+/* 参加者の感想 (2x2 Grid) */
+.reviews-section { margin: 60px auto 50px; max-width: 900px; }
+.review-select-container { text-align: center; margin-bottom: 25px; }
+.review-select-container label { font-weight: bold; color: #0077b6; margin-right: 10px; font-size: 1rem; }
+.review-year-select {
+  padding: 8px 16px; border: 1px solid #0077b6; border-radius: 8px; font-size: 1rem;
+  color: #0077b6; background: #ffffff; cursor: pointer; display: inline-block; vertical-align: middle;
+}
+.review-grid {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px; max-width: 850px; margin: 0 auto;
+}
+.review-card {
+  background: #ffffff; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  display: flex; flex-direction: column; cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.review-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); }
+.review-card-body { padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.review-student-name { font-size: 0.95rem; color: #0077b6; font-weight: bold; white-space: nowrap; }
+.review-topic-title { color: #555555; font-size: 0.9rem; text-align: right; font-weight: bold; }
+.review-card-img { width: 100%; height: 180px; object-fit: cover; }
+.review-note { text-align: center; color: #888888; font-size: 0.8rem; margin-top: 25px; }
 
-    /* Modal Popup for Spot Photo & Student Comment */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-content {
-      max-width: 700px;
-      width: 100%;
-      background: #ffffff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-      text-align: center;
-      padding: 25px;
-      position: relative;
-    }
-    .modal-content img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: contain;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .modal-close {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 1.8rem;
-      color: #333;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .modal-title {
-      font-size: 1.2rem;
-      color: #0077b6;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
-    .modal-caption {
-      font-size: 1.05rem;
-      color: #333333;
-      line-height: 1.6;
-    }
-    
-    @media (max-width: 700px) { .review-grid { grid-template-columns: 1fr; } }
+/* Website Link Pill on Review Card */
+.card-footer-bar {
+  padding: 10px 20px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.review-card .stats-line { padding: 0; font-size: .82rem; color: #94a3b8; }
+.website-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.78rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+.website-badge:hover {
+  background: #0077b6;
+  color: #ffffff;
+}
 
+/* Modal Popup for Spot Photo & Student Comment */
+.modal {
+  display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+  width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);
+  align-items: center; justify-content: center; padding: 20px;
+}
+.modal-content {
+  max-width: 700px; width: 100%; background: #ffffff; border-radius: 12px; overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3); text-align: center; padding: 25px; position: relative;
+  max-height: 90vh; overflow-y: auto;
+}
+.modal-content img { width: 100%; max-height: 360px; object-fit: contain; border-radius: 8px; margin-bottom: 15px; }
+.modal-close { position: absolute; top: 10px; right: 15px; font-size: 1.8rem; color: #333; cursor: pointer; font-weight: bold; }
+.modal-title { font-size: 1.2rem; color: #0077b6; font-weight: bold; margin-bottom: 6px; }
+.modal-caption { font-size: 1.05rem; color: #333333; line-height: 1.6; }
+.modal-bio { font-size: 0.88rem; color: #475569; background: #f8fafc; padding: 8px 14px; border-radius: 8px; margin: 10px auto; max-width: 520px; }
+
+@media (max-width: 700px) { .review-grid { grid-template-columns: 1fr; } }
+
+/* ===== navigation, forms, buttons, tables, admin ===== */
+.topnav { background:#ffffff; box-shadow:0 2px 10px rgba(0,0,0,.06); position:sticky; top:0; z-index:500; }
+.topnav-inner { max-width:1000px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.brand { font-weight:700; color:#0077b6; text-decoration:none; margin-right:auto; }
+.topnav a, .topnav button.linklike { color:#334155; text-decoration:none; font-size:.92rem; background:none; border:none; cursor:pointer; font-family:inherit; }
+.topnav a:hover, .topnav button.linklike:hover { color:#0077b6; }
+.topnav .pill { background:#0077b6; color:#fff; padding:6px 14px; border-radius:20px; font-weight:bold; }
+.topnav .pill:hover { background:#005f9c; color:#fff; }
+.hello { font-size:.85rem; color:#64748b; }
+
+.flashes { max-width:1000px; margin:16px auto 0; padding:0 20px; }
+.flash { padding:12px 16px; border-radius:8px; margin-bottom:8px; font-size:.95rem; }
+.flash.ok { background:#dcfce7; color:#166534; border:1px solid #bbf7d0; }
+.flash.error { background:#fee2e2; color:#991b1b; border:1px solid #fecaca; }
+
+.page { max-width:1000px; margin:0 auto; padding:30px 20px 50px; }
+.page h1 { color:#0077b6; font-size:1.7rem; margin-bottom:6px; }
+.page .lead { color:#64748b; margin-bottom:22px; }
+.card { background:#fff; border-radius:12px; padding:24px; box-shadow:0 4px 15px rgba(0,0,0,.06); margin-bottom:24px; }
+.card.narrow { max-width:500px; margin-left:auto; margin-right:auto; }
+.card h2 { font-size:1.15rem; color:#0077b6; margin-bottom:14px; }
+
+label.f { display:block; font-weight:bold; font-size:.9rem; color:#334155; margin:14px 0 5px; }
+input[type=text], input[type=email], input[type=password], input[type=number], input[type=search], input[type=url], select, textarea {
+  width:100%; padding:10px 12px; border:1px solid #cbd5e1; border-radius:8px; font-size:1rem; font-family:inherit; background:#fff; }
+input:focus, select:focus, textarea:focus { outline:2px solid #90e0ef; border-color:#0077b6; }
+textarea { min-height:95px; resize:vertical; }
+.hint { font-size:.8rem; color:#64748b; margin-top:4px; }
+
+.btn { display:inline-block; padding:10px 20px; background:#0077b6; color:#fff; border:none; border-radius:8px; font-weight:bold; font-size:.95rem; cursor:pointer; text-decoration:none; font-family:inherit; }
+.btn:hover { background:#005f9c; }
+.btn.sm { padding:5px 12px; font-size:.82rem; }
+.btn.green { background:#16a34a; } .btn.green:hover { background:#15803d; }
+.btn.red { background:#dc2626; } .btn.red:hover { background:#b91c1c; }
+.btn.gray { background:#64748b; } .btn.gray:hover { background:#475569; }
+.btn.ghost { background:#fff; color:#0077b6; border:1px solid #0077b6; } .btn.ghost:hover { background:#e8f4f8; }
+.row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+.mt { margin-top:18px; }
+.center { text-align:center; }
+.small-link { font-size:.88rem; margin-top:14px; text-align:center; color:#64748b; }
+.small-link a { color:#0077b6; }
+form.inline { display:inline; }
+
+.badge { display:inline-block; padding:2px 10px; border-radius:20px; font-size:.78rem; font-weight:bold; }
+.badge.pending { background:#fef3c7; color:#92400e; }
+.badge.approved { background:#dcfce7; color:#166534; }
+.badge.rejected { background:#fee2e2; color:#991b1b; }
+.badge.off { background:#e2e8f0; color:#475569; }
+
+.table-wrap { overflow-x:auto; }
+table.t { width:100%; border-collapse:collapse; font-size:.92rem; }
+table.t th { text-align:left; background:#e8f4f8; color:#0077b6; padding:10px 12px; white-space:nowrap; }
+table.t td { padding:10px 12px; border-bottom:1px solid #e2e8f0; vertical-align:middle; }
+table.t tr:hover td { background:#f8fafc; }
+table.t img.thumb { width:70px; height:50px; object-fit:cover; border-radius:6px; display:block; }
+
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom:24px; }
+.stat { background:#fff; border-radius:12px; padding:18px; box-shadow:0 4px 15px rgba(0,0,0,.06); text-align:center; }
+.stat b { display:block; font-size:2rem; color:#0077b6; }
+.stat span { font-size:.85rem; color:#64748b; }
+.stat.warn b { color:#d97706; }
+
+.subnav { background:#1e293b; }
+.subnav-inner { max-width:1000px; margin:0 auto; padding:0 20px; display:flex; gap:4px; flex-wrap:wrap; }
+.subnav a { color:#cbd5e1; text-decoration:none; padding:11px 14px; font-size:.9rem; }
+.subnav a:hover, .subnav a.active { background:#0f172a; color:#fff; }
+
+.filters { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; align-items:center; }
+.filters select, .filters input { width:auto; min-width:140px; }
+
+/* memory detail page */
+.memory-photo { width:100%; max-height:520px; object-fit:contain; background:#0f172a; border-radius:10px; }
+.meta { color:#64748b; font-size:.88rem; margin:10px 0; }
+.memory-desc { font-size:1.05rem; white-space:pre-wrap; margin:14px 0; }
+.like-btn { background:#fff; border:1px solid #f43f5e; color:#f43f5e; padding:8px 18px; border-radius:24px; cursor:pointer; font-size:1rem; font-family:inherit; }
+.like-btn.on { background:#f43f5e; color:#fff; }
+.comment { border-bottom:1px solid #e2e8f0; padding:12px 0; }
+.comment .who { font-weight:bold; color:#0077b6; font-size:.9rem; }
+.comment .when { color:#94a3b8; font-size:.78rem; margin-left:8px; font-weight:normal; }
+.comment p { white-space:pre-wrap; margin-top:3px; }
+
+.modal-meta { color:#64748b; font-size:.9rem; margin-bottom:10px; }
+.preview { max-width:100%; max-height:220px; margin-top:10px; border-radius:8px; display:none; }
+.empty { text-align:center; color:#94a3b8; padding:40px 0; grid-column:1/-1; }
+.err-big { font-size:4rem; color:#0077b6; font-weight:700; text-align:center; }
+.nav-hero { padding:60px 20px; }
+@media (max-width:600px) { .topnav-inner { gap:10px; } .hero-title { font-size:1.6rem; } }
   </style>
 </head>
 <body>
+  <div id="app"></div>
 
-  <header class="hero">
-    <p class="hero-sub">中部コンピュータ・パティシエ専門学校秋の恒例行事</p>
-    <h1 class="hero-title">清水・駿河湾クルーズ日帰り研修旅行</h1>
-    <p class="hero-desc">日本の文化と歴史を学ぶ旅</p>
-  </header>
-
-  <div class="container">
-
-    <section class="info-box">
-      <h3>📅 旅行概要</h3>
-      <ul class="info-list">
-        <li><strong>日程：</strong>毎年 9月 - 10月 日帰り</li>
-        <li><strong>方面：</strong>静岡県 清水・久能山エリア</li>
-        <li><strong>集合・出発：</strong>学校前 8:45配車 / 9:00出発</li>
-        <li><strong>解散予定：</strong>学校前 19:00着</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title">旅のハイライト・見どころ</h2>
-      <p style="text-align: center; margin-bottom: 25px; color: #666;">※各スポットをクリックすると、詳細ページが開きます。</p>
-      
-      <div class="spots-grid">
-
-        <!-- スポット 1 -->
-        <a href="detail1.html" class="spot-card">
-          <span class="spot-tag">グルメ & ショッピング</span>
-          <div class="spot-body">
-            <img src="images/food/image1.jpg" alt="はとばキッチン" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
-            <h3 class="spot-title">エスパルスドリームプラザ<br>「はとばキッチン」</h3>
-            <p class="spot-text">清水港のヨットハーバーを目の前に望む複合商業施設。<br>大人気のビュッフェランチを堪能します。</p>
-            <span class="spot-link">Clickして詳細へ ➔</span>
-          </div>
-        </a>
-
-        <!-- スポット 2 -->
-        <a href="detail2.html" class="spot-card">
-          <span class="spot-tag">絶景クルーズ</span>
-          <div class="spot-body">
-            <img src="images/cruise/image2.jpg" alt="駿河湾クルーズ" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
-            <h3 class="spot-title">駿河湾クルーズ（清水港）</h3>
-            <p class="spot-text">潮風を感じながら約40分間の船旅へ。<br>富士山のパノラマビューを満喫。</p>
-            <span class="spot-link">Clickして詳細へ ➔</span>
-          </div>
-        </a>
-
-        <!-- スポット 3 -->
-        <a href="detail3.html" class="spot-card">
-          <span class="spot-tag">世界文化遺産</span>
-          <div class="spot-body">
-            <img src="images/image3.jpg" alt="三保の松原" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
-            <h3 class="spot-title">三保の松原</h3>
-            <p class="spot-text">青い海と緑の松林、富士山の絶景名所。<br>「羽衣伝説」の舞台を散策。</p>
-            <span class="spot-link">Clickして詳細へ ➔</span>
-          </div>
-        </a>
-
-        <!-- スポット 4 -->
-        <a href="detail4.html" class="spot-card">
-          <span class="spot-tag">国宝・パワースポット</span>
-          <div class="spot-body">
-            <img src="images/image4.jpg" alt="久能山東照宮" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
-            <h3 class="spot-title">久能山東照宮</h3>
-            <p class="spot-text">徳川家康公が眠る国宝の社殿。<br>歴史とパワーあふれる名所を見学。</p>
-            <span class="spot-link">Clickして詳細へ ➔</span>
-          </div>
-        </a>
-
-      </div>
-    </section>
-
-    <!-- 参加者の感想 -->
-    <section class="reviews-section" id="reviews">
-      <h2 class="section-title">参加者の感想</h2>
-      
-      <div class="review-select-container">
-        <label for="review-year-select">年度を選択：</label>
-        <select id="review-year-select" class="review-year-select">
-          <option value="2024">2024年</option>
-          <option value="2025">2025年</option>
-          <option value="2026">2026年</option>
-        </select>
-      </div>
-
-      <div class="review-grid" id="review-list" aria-live="polite">
-        <!-- 2024 Default Items -->
-        <article class="review-card" onclick="openModal('images/2024 students/vihara.webp', 'ビハラさんの感想 (クルーズから見る富士山)', 'クルーズから見る富士山がとてもきれいで、忘れられない思い出になりました。')">
-          <div class="review-card-body">
-            <span class="review-student-name">💬 ビハラさん</span>
-            <span class="review-topic-title">クルーズから見る富士山</span>
-          </div>
-          <img src="images/2024 students/vihara.webp" alt="富士山とクルーズ" class="review-card-img">
-        </article>
-
-        <article class="review-card" onclick="openModal('images/2024 students/afuka.webp', 'アフカさんの感想 (おいしいランチ)', '友達と一緒においしいランチを食べたり、写真を撮ったりできて楽しかったです。')">
-          <div class="review-card-body">
-            <span class="review-student-name">💬 アフカさん</span>
-            <span class="review-topic-title">おいしいランチと写真撮影</span>
-          </div>
-          <img src="images/2024 students/afuka.webp" alt="ランチ" class="review-card-img">
-        </article>
-
-        <article class="review-card" onclick="openModal('images/2024 students/karki.webp', 'カルキさんの感想 (歴史や文化の見学)', '三保の松原と久能山東照宮を見学して、日本の歴史や文化を学ぶことができました。')">
-          <div class="review-card-body">
-            <span class="review-student-name">💬 カルキさん</span>
-            <span class="review-topic-title">三保の松原と久能山東照宮の見学</span>
-          </div>
-          <img src="images/2024 students/karki.webp" alt="三保の松原" class="review-card-img">
-        </article>
-
-        <article class="review-card" onclick="openModal('images/2024 students/sharma.webp', 'サルマさんの感想 (バスの中の雰囲気)', 'バスの中の雰囲気も良く、クラスメイトみんなと仲良くなれる最高の行事でした。')">
-          <div class="review-card-body">
-            <span class="review-student-name">💬 サルマさん</span>
-            <span class="review-topic-title">バスの中の雰囲気とクラスメイト</span>
-          </div>
-          <img src="images/2024 students/sharma.webp" alt="久能山東照宮" class="review-card-img">
-        </article>
-      </div>
-      <p class="review-note">※見どころの写真をクリックすると、学生たちの感想（コメント）が大きく表示されます。</p>
-    </section>
-
-  </div>
-
-  <!-- Modal Popup Box -->
-  <div id="photoModal" class="modal" onclick="closeModal()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <span class="modal-close" onclick="closeModal()">&times;</span>
+  <!-- 写真ポップアップ (Modal) -->
+  <div id="photoModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close" data-act="closeModal">&times;</span>
       <img id="modalImg" src="" alt="スポットの写真">
       <h3 id="modalTitle" class="modal-title"></h3>
+      <p id="modalMeta" class="modal-meta"></p>
+      <p id="modalBio" class="modal-bio" style="display:none;"></p>
       <p id="modalCaption" class="modal-caption"></p>
+      <div class="row" style="justify-content:center; margin-top:16px;">
+        <a id="modalWebsite" class="btn sm ghost" href="#" target="_blank" rel="noopener noreferrer" style="display:none;">🌐 学生のWebサイトを見る ↗</a>
+        <a id="modalLink" class="btn sm" href="#" data-act="closeModal">❤ いいね・コメントはこちら ➔</a>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <p>※バス走行中は安全のため必ずシートベルトの着用をお願いいたします。</p>
-    <p style="margin-top: 4px;">企画手配：株式会社 第一観光</p>
-  </footer>
-
-
   <script>
-    const reviewData = {
-      "2024": [
-        { photo: "images/2024 students/vihara.webp", title: "クルーズから見る富士山", name: "ビハラさん", comment: "クルーズから見る富士山がとてもきれいで、忘れられない思い出になりました。" },
-        { photo: "images/2024 students/afuka.webp", title: "おいしいランチと写真撮影", name: "アフカさん", comment: "友達と一緒においしいランチを食べたり、写真を撮ったりできて楽しかったです。" },
-        { photo: "images/2024 students/karki.webp", title: "三保の松原と久能山東照宮の見学", name: "カルキさん", comment: "三保の松原と久能山東照宮を見学して、日本の歴史や文化を学ぶことができました。" },
-        { photo: "images/2024 students/sharma.webp", title: "バスの中の雰囲気とクラスメイト", name: "サルマさん", comment: "バスの中の雰囲気も良く、クラスメイトみんなと仲良くなれる最高の行事でした。" }
-      ],
-      "2025": [
-        { photo: "images/2025 students/ayau.webp", title: "船の上からの景色", name: "アユさん", comment: "船の上から見る景色が最高でした。海風も気持ちよく、また参加したいです。" },
-        { photo: "images/2025 students/khadka.webp", title: "友達との思い出", name: "カドカさん", comment: "普段なかなか行けない場所を友達と一緒に回れて、とても充実した一日でした。" },
-        { photo: "images/2025 students/karishma.webp", title: "久能山東照宮の建物", name: "カリスマさん", comment: "久能山東照宮の建物が美しく、日本の歴史に興味を持つきっかけになりました。" },
-        { photo: "images/2025 students/sapana.webp", title: "写真スポットでの思い出", name: "サパナさん", comment: "写真スポットがたくさんあって、思い出に残るすばらしい一日になりました。" }
-      ],
-      "2026": [
-        { photo: "images/2026 students/kumari.webp", title: "駿河湾クルーズと富士山", name: "クマリさん", comment: "駿河湾クルーズで富士山を見ることができて感動しました。写真もたくさん撮れました。" },
-        { photo: "images/2026 students/sangita.webp", title: "ランチタイムの会話", name: "サンギタさん", comment: "はとばキッチンのランチがおいしく、友達との会話も弾んで楽しかったです。" },
-        { photo: "images/2026 students/gc.webp", title: "研修旅行の感想", name: "ジシさん", comment: "美しい景色と歴史ある場所の両方を楽しめて、思い出に残る研修旅行になりました。" },
-        { photo: "images/2026 students/dan.webp", title: "最高の景色と思い出", name: "ダンさん", comment: "天気に恵まれて最高の景色でした！友達と最高の思い出が作れて大満足です。" }
-      ]
+(function () {
+'use strict';
+
+/* =====================================================================
+   データ保存: ブラウザの localStorage (サーバー不要 / no backend)
+   ===================================================================== */
+const KEY = 'ptravel_v1', SKEY = 'ptravel_session';
+const ADMIN_EMAIL = 'admin@example.com', ADMIN_PASS = 'admin123', STUDENT_PASS = 'student123';
+const DEFAULT_PHOTO = 'images/fuji.jpg';
+
+const SEED = {
+  2024: [
+    ['vihara','ビハラ','images/2024 students/vihara.webp','クルーズから見る富士山','クルーズから見る富士山がとてもきれいで、忘れられない思い出になりました。',''],
+    ['afuka','アフカ','images/2024 students/afuka.webp','おいしいランチと写真撮影','友達と一緒においしいランチを食べたり、写真を撮ったりできて楽しかったです。',''],
+    ['karki','カルキ','images/2024 students/karki.webp','三保の松原と久能山東照宮の見学','三保の松原と久能山東照宮を見学して、日本の歴史や文化を学ぶことができました。',''],
+    ['sharma','サルマ','images/2024 students/sharma.webp','バスの中の雰囲気とクラスメイト','バスの中の雰囲気も良く、クラスメイトみんなと仲良くなれる最高の行事でした。','']
+  ],
+  2025: [
+    ['ayau','アユ','images/2025 students/ayau.webp','船の上からの景色','船の上から見る景色が最高でした。海風も気持ちよく、また参加したいです。',''],
+    ['khadka','カドカ','images/2025 students/khadka.webp','友達との思い出','普段なかなか行けない場所を友達と一緒に回れて、とても充実した一日でした。',''],
+    ['karishma','カリスマ','images/2025 students/karishma.webp','久能山東照宮の建物','久能山東照宮の建物が美しく、日本の歴史に興味を持つきっかけになりました。',''],
+    ['sapana','サパナ','images/2025 students/sapana.webp','写真スポットでの思い出','写真スポットがたくさんあって、思い出に残るすばらしい一日になりました。','']
+  ],
+  2026: [
+    ['kumari','クマリ','images/2026 students/kumari.webp','駿河湾クルーズと富士山','駿河湾クルーズで富士山を見ることができて感動しました。写真もたくさん撮れました。',''],
+    ['sangita','サンギタ','images/2026 students/sangita.webp','ランチタイムの会話','はとばキッチンのランチがおいしく、友達との会話も弾んで楽しかったです。',''],
+    ['gc','ジシ','images/2026 students/gc.webp','研修旅行の感想','美しい景色と歴史ある場所の両方を楽しめて、思い出に残る研修旅行になりました。',''],
+    ['dan','ダン','images/2026 students/dan.webp','最高の景色と思い出','天気に恵まれて最高の景色でした！友達と最高の思い出が作れて大満足です。','']
+  ]
+};
+
+let db = null, me = null, flashMsg = null;
+const ui = { homeYear: null, sYear: '', sQ: '', mYear: '', mStatus: '' };
+
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+const now = () => { const d = new Date(), p = n => String(n).padStart(2, '0');
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) + ' ' + p(d.getHours()) + ':' + p(d.getMinutes()); };
+const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+function normalizeUrl(u) {
+  const s = String(u || '').trim();
+  if (!s) return '';
+  if (/^https?:\/\//i.test(s)) return s;
+  return 'https://' + s;
+}
+
+async function hashPw(_email, pw) {
+  const s = 'ptravel-salt:' + pw;
+  if (window.crypto && crypto.subtle) {
+    const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+    return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2, '0')).join('');
+  }
+  let h = 5381; for (const ch of s) h = ((h << 5) + h + ch.charCodeAt(0)) | 0;
+  return 'x' + h;
+}
+
+async function makeSeed() {
+  const d = { years: [], users: [], memories: [], comments: [] };
+  d.users.push({ id: 'admin', name: '管理者', email: ADMIN_EMAIL, pass: await hashPw(ADMIN_EMAIL, ADMIN_PASS), role: 'admin', year: null, bio: '', website: '', created: now() });
+  for (const y of Object.keys(SEED)) {
+    d.years.push({ year: +y, active: true });
+    for (const r of SEED[y].slice().reverse()) {
+      const email = r[0] + '@example.com';
+      d.users.push({ id: 's_' + r[0], name: r[1], email, pass: await hashPw(email, STUDENT_PASS), role: 'student', year: +y, bio: '', website: r[5] || '', created: now() });
+      d.memories.push({ id: 'm_' + r[0], userId: 's_' + r[0], year: +y, title: r[3], desc: r[4], photo: r[2], status: 'approved', created: now(), likes: [] });
+    }
+  }
+  return d;
+}
+
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(db)); return true; }
+  catch (e) { alert('保存できませんでした（ブラウザの容量オーバーです）。古い写真を削除してください。'); return false; }
+}
+
+/* ---------- helpers ---------- */
+const user = id => db.users.find(u => u.id === id);
+const mem = id => db.memories.find(m => m.id === id);
+const yearsAll = () => db.years.slice().sort((a, b) => a.year - b.year);
+const yearsActive = () => yearsAll().filter(y => y.active);
+const authorName = u => !u ? '?' : (u.role === 'student' ? u.name + 'さん' : '管理者');
+const STATUS = { pending: '承認待ち', approved: '公開中', rejected: '却下' };
+const canSee = m => m.status === 'approved' || (me && (me.role === 'admin' || me.id === m.userId));
+const flash = (msg, type) => { flashMsg = { msg, type: type || 'ok' }; };
+const go = h => { if (location.hash === h) render(); else location.hash = h; };
+
+function readImage(file) {
+  return new Promise((resolve, reject) => {
+    if (!file) return reject('写真を選択してください');
+    if (!/^image\/(jpeg|png|gif|webp)$/.test(file.type)) return reject('JPG / PNG / GIF / WEBP の画像のみアップロードできます');
+    if (file.size > 15 * 1024 * 1024) return reject('ファイルが大きすぎます');
+    const fr = new FileReader();
+    fr.onerror = () => reject('読み込みに失敗しました');
+    fr.onload = () => {
+      const img = new Image();
+      img.onerror = () => reject('画像を読み込めませんでした');
+      img.onload = () => {
+        const s = Math.min(1, 900 / Math.max(img.width, img.height));
+        const c = document.createElement('canvas');
+        c.width = Math.round(img.width * s); c.height = Math.round(img.height * s);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        resolve(c.toDataURL('image/jpeg', 0.75));
+      };
+      img.src = fr.result;
     };
+    fr.readAsDataURL(file);
+  });
+}
 
-    const yearSelect = document.getElementById('review-year-select');
-    const reviewList = document.getElementById('review-list');
+/* =====================================================================
+   画面パーツ
+   ===================================================================== */
+function nav() {
+  let r;
+  if (me && me.role === 'student')
+    r = '<a href="#/my">マイ思い出</a><a href="#/upload">写真を投稿</a><a href="#/profile">プロフィール・URL編集</a><span class="hello">' + esc(me.name) + 'さん</span><button class="linklike" data-act="logout">ログアウト</button>';
+  else if (me)
+    r = '<a href="#/admin">管理画面</a><button class="linklike" data-act="logout">ログアウト</button>';
+  else
+    r = '<a href="#/login">学生ログイン</a><a class="pill" href="#/register">新規登録</a><a href="#/admin-login">管理者</a>';
+  return '<nav class="topnav"><div class="topnav-inner"><a class="brand" href="#/">🚢 清水・駿河湾クルーズ</a><a href="#/reviews">参加者の感想</a>' + r + '</div></nav>';
+}
+const FOOTER = '<footer><p>※バス走行中は安全のため必ずシートベルトの着用をお願いいたします。</p><p style="margin-top: 4px;">企画手配：株式会社 第一観光</p></footer>';
+const shell = body => {
+  let f = '';
+  if (flashMsg) { f = '<div class="flashes"><div class="flash ' + flashMsg.type + '">' + esc(flashMsg.msg) + '</div></div>'; flashMsg = null; }
+  return nav() + f + body + FOOTER;
+};
+const page = body => '<div class="page">' + body + '</div>';
+const yearOptions = (list, sel) => list.map(y => '<option value="' + y.year + '"' + (String(sel) === String(y.year) ? ' selected' : '') + '>' + y.year + '年</option>').join('');
+const badge = s => '<span class="badge ' + s + '">' + STATUS[s] + '</span>';
+const thumb = m => '<img class="thumb" src="' + esc(m.photo) + '" alt="">';
 
-    yearSelect.addEventListener('change', () => {
-      const year = yearSelect.value;
-      
-      reviewList.innerHTML = reviewData[year].map((review) => `
-        <article class="review-card" onclick="openModal('${review.photo}', '${review.name}の感想 (${review.title})', '${review.comment}')">
-          <div class="review-card-body">
-            <span class="review-student-name">💬 ${review.name}</span>
-            <span class="review-topic-title">${review.title}</span>
-          </div>
-          <img src="${review.photo}" alt="${review.title}" class="review-card-img">
-        </article>
-      `).join('');
+/* ---------- ホーム (閲覧専用・プライバシー保護のため追加ボタンはなし) ---------- */
+function reviewsBox() {
+  const ys = yearsActive();
+  if (ui.homeYear == null || !ys.some(y => y.year === ui.homeYear)) ui.homeYear = ys.length ? ys[ys.length - 1].year : null;
+  const list = db.memories.filter(m => m.year === ui.homeYear && m.status === 'approved').slice().reverse();
+  const cards = list.map(m => {
+    const u = user(m.userId);
+    const siteBtn = (u && u.website)
+      ? '<a class="website-badge" href="' + esc(u.website) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">🌐 Webサイト ↗</a>'
+      : '';
+    return '<article class="review-card" data-act="openModal" data-id="' + esc(m.id) + '">' +
+      '<div class="review-card-body"><span class="review-student-name">💬 ' + esc(authorName(u)) + '</span><span class="review-topic-title">' + esc(m.title) + '</span></div>' +
+      '<img src="' + esc(m.photo) + '" alt="' + esc(m.title) + '" class="review-card-img" loading="lazy">' +
+      '<div class="card-footer-bar"><span class="stats-line">❤ ' + m.likes.length + ' ・ 💬 ' + db.comments.filter(c => c.memId === m.id).length + '</span>' + siteBtn + '</div></article>';
+  }).join('') || '<p class="empty">' + (ys.length ? 'この年度の思い出はまだありません。' : '年度がまだ登録されていません。') + '</p>';
+  return '<div class="review-select-container"><label for="yearSel">年度を選択：</label><select id="yearSel" class="review-year-select">' + yearOptions(ys, ui.homeYear) + '</select></div>' +
+         '<div class="review-grid" aria-live="polite">' + cards + '</div>';
+}
+
+function homeView() {
+  return shell(
+  '<header class="hero"><p class="hero-sub">中部コンピュータ・パティシエ専門学校秋の恒例行事</p><h1 class="hero-title">清水・駿河湾クルーズ日帰り研修旅行</h1><p class="hero-desc">日本の文化と歴史を学ぶ旅</p></header>' +
+  '<div class="container">' +
+  '<section class="info-box"><h3>📅 旅行概要</h3><ul class="info-list">' +
+  '<li><strong>日程：</strong>毎年 9月 - 10月 日帰り</li><li><strong>方面：</strong>静岡県 清水・久能山エリア</li>' +
+  '<li><strong>集合・出発：</strong>学校前 8:45配車 / 9:00出発</li><li><strong>解散予定：</strong>学校前 19:00着</li></ul></section>' +
+  '<section><h2 class="section-title">旅のハイライト・見どころ</h2><p style="text-align: center; margin-bottom: 25px; color: #666;">※各スポットをクリックすると、詳細ページが開きます。</p><div class="spots-grid">' +
+  spot('detail1.html','グルメ & ショッピング','images/food/image1.jpg','はとばキッチン','エスパルスドリームプラザ<br>「はとばキッチン」','清水港のヨットハーバーを目の前に望む複合商業施設。<br>大人気のビュッフェランチを堪能します。') +
+  spot('detail2.html','絶景クルーズ','images/cruise/image2.jpg','駿河湾クルーズ','駿河湾クルーズ（清水港）','潮風を感じながら約40分間の船旅へ。<br>富士山のパノラマビューを満喫。') +
+  spot('detail3.html','世界文化遺産','images/image3.jpg','三保の松原','三保の松原','青い海と緑の松林、富士山の絶景名所。<br>「羽衣伝説」の舞台を散策。') +
+  spot('detail4.html','国宝・パワースポット','images/image4.jpg','久能山東照宮','久能山東照宮','徳川家康公が眠る国宝の社殿。<br>歴史とパワーあふれる名所を見学。') +
+  '</div></section>' +
+  '<section class="reviews-section" id="reviews"><h2 class="section-title">参加者の感想</h2><div id="reviewsBox">' + reviewsBox() + '</div>' +
+  '<p class="review-note">※写真をクリックすると、学生たちの感想（コメント）やWebサイトが大きく表示されます。</p></section></div>');
+}
+function spot(href, tag, img, alt, title, text) {
+  return '<a href="' + href + '" class="spot-card"><span class="spot-tag">' + tag + '</span><div class="spot-body">' +
+    '<img src="' + img + '" alt="' + alt + '" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px;">' +
+    '<h3 class="spot-title">' + title + '</h3><p class="spot-text">' + text + '</p><span class="spot-link">Clickして詳細へ ➔</span></div></a>';
+}
+
+/* ---------- 専用 学生ログイン & 新規登録ページ ---------- */
+function loginView(role) {
+  const adm = role === 'admin';
+  return shell(page('<div class="card narrow"><h1>' + (adm ? '🔐 管理者ログイン' : '🎓 学生ログイン') + '</h1><p class="lead">' + (adm ? 'Administrator Login' : 'ログインしてプロフィール・WebサイトURL・感想を管理') + '</p>' +
+    '<form data-form="login" data-role="' + role + '"><label class="f">メールアドレス (Email)</label><input type="email" name="email" required autofocus>' +
+    '<label class="f">パスワード (Password)</label><input type="password" name="password" required>' +
+    '<div class="mt"><button class="btn" style="width:100%">' + (adm ? '管理者としてログイン' : 'ログイン') + '</button></div></form>' +
+    '<p class="small-link">' + (adm ? '<a href="#/login">学生ログインはこちら</a>' : '初めて参加される学生は <a href="#/register">学生新規登録はこちら</a>') + '</p></div>'));
+}
+function registerView() {
+  return shell(page('<div class="card narrow"><h1>📝 学生新規登録（プロフィール・感想追加）</h1><p class="lead">参加学生専用ページです。登録後にログインしていつでも内容を編集できます。</p>' +
+    '<form data-form="register">' +
+    '<label class="f">お名前 (Name) *</label><input type="text" name="name" maxlength="50" placeholder="例: Fathima" required>' +
+    '<label class="f">メールアドレス (Email) *</label><input type="email" name="email" placeholder="example@email.com" required>' +
+    '<label class="f">パスワード (8文字以上) *</label><input type="password" name="password" minlength="8" required>' +
+    '<label class="f">参加年度 (Year) *</label><select id="regYearSelect" name="year" required><option value="">選択してください</option>' + yearOptions(yearsActive(), '') + '<option value="new">＋ 新しい年度を追加する (例: 2027)</option></select>' +
+    '<div id="regCustomYearBox" style="display:none;"><label class="f">新しい年度を入力 (2000〜2100) *</label><input type="number" id="regCustomYear" name="custom_year" min="2000" max="2100" placeholder="例: 2027"></div>' +
+    '<label class="f">自分のWebサイト / ポートフォリオ URL（任意）</label><input type="url" name="website" placeholder="https://example.com">' +
+    '<label class="f">参加の感想タイトル（任意）</label><input type="text" name="title" maxlength="80" placeholder="例: 駿河湾クルーズと富士山">' +
+    '<label class="f">参加の感想・自己紹介（任意）</label><textarea name="bio" maxlength="500" placeholder="研修旅行の感想や一言メッセージ"></textarea>' +
+    '<label class="f">プロフィール / 思い出の写真（任意）</label><input id="regPhotoInput" type="file" name="photo" accept="image/*"><img id="regPreview" class="preview" alt="preview">' +
+    '<div class="mt"><button class="btn" style="width:100%">登録する</button></div></form>' +
+    '<p class="small-link">既にアカウントをお持ちの方は <a href="#/login">学生ログイン</a></p></div>'));
+}
+
+/* ---------- 思い出の詳細 ---------- */
+function memoryView(id) {
+  const m = mem(id);
+  if (!m || !canSee(m)) return notFound();
+  const u = user(m.userId);
+  const comments = db.comments.filter(c => c.memId === id);
+  const liked = me && m.likes.indexOf(me.id) >= 0;
+  const canInteract = me && me.role === 'student' && m.status === 'approved';
+  let likeHtml;
+  if (canInteract) likeHtml = '<button class="like-btn' + (liked ? ' on' : '') + '" data-act="like" data-id="' + esc(id) + '">' + (liked ? '❤ いいね済み' : '🤍 いいね') + ' (' + m.likes.length + ')</button>';
+  else likeHtml = '<p class="meta">❤ ' + m.likes.length + ' 件のいいね' + (!me ? ' ・ <a href="#/login">ログイン</a>していいねできます' : '') + '</p>';
+  const websiteHtml = (u && u.website)
+    ? '<p style="margin:12px 0;"><a class="btn sm ghost" href="' + esc(u.website) + '" target="_blank" rel="noopener noreferrer">🌐 ' + esc(u.name) + 'さんのWebサイトを見る ↗</a></p>'
+    : '';
+  const bioHtml = (u && u.bio)
+    ? '<p class="modal-bio" style="margin:10px 0; max-width:100%; text-align:left;"><strong>👤 プロフィール:</strong> ' + esc(u.bio) + '</p>'
+    : '';
+  const cl = comments.map(c => {
+    const cu = user(c.userId);
+    const del = me && (me.role === 'admin' || me.id === c.userId) ? '<button class="btn sm red" style="margin-top:6px;" data-act="delComment" data-id="' + esc(c.id) + '">削除</button>' : '';
+    return '<div class="comment"><div class="who">' + esc(authorName(cu)) + '<span class="when">' + esc(c.created) + '</span></div><p>' + esc(c.body) + '</p>' + del + '</div>';
+  }).join('') || '<p class="meta">まだコメントはありません。</p>';
+  const form = canInteract
+    ? '<form data-form="comment" data-id="' + esc(id) + '" class="mt"><label class="f">コメントを書く</label><textarea name="body" maxlength="500" required></textarea><div class="mt"><button class="btn">投稿する</button></div></form>'
+    : (!me ? '<p class="meta mt"><a href="#/login">ログイン</a>するとコメントできます。</p>' : '');
+  return shell(page(
+    '<p style="margin-bottom:12px;"><a href="#/reviews" data-act="backToYear" data-year="' + m.year + '">⬅ ' + m.year + '年の感想一覧へ</a></p>' +
+    '<div class="card">' + (m.status !== 'approved' ? '<p class="flash error">この投稿は現在 ' + badge(m.status) + ' です。</p>' : '') +
+    '<img class="memory-photo" src="' + esc(m.photo) + '" alt="' + esc(m.title) + '"><h1 style="margin-top:16px;">' + esc(m.title) + '</h1>' +
+    '<p class="meta">' + esc(authorName(u)) + ' ・ ' + m.year + '年 ・ ' + esc(m.created) + '</p>' +
+    websiteHtml + bioHtml +
+    (m.desc ? '<p class="memory-desc">' + esc(m.desc) + '</p>' : '') + likeHtml + '</div>' +
+    '<div class="card" id="comments"><h2>💬 コメント (' + comments.length + ')</h2>' + cl + form + '</div>'));
+}
+function notFound() {
+  return shell(page('<div class="center"><p class="err-big">404</p><p class="lead">ページが見つかりません。</p><a class="btn" href="#/">ホームに戻る (Home)</a></div>'));
+}
+
+/* ---------- ログイン中の学生専用ページ (プロフィール・URL・感想追加) ---------- */
+function profileView() {
+  return shell(page('<div class="card narrow"><h1>👤 プロフィール・WebサイトURL編集</h1><p class="lead">参加年度: ' + esc(me.year) + '年</p>' +
+    '<form data-form="profile"><label class="f">名前</label><input type="text" name="name" maxlength="50" required value="' + esc(me.name) + '">' +
+    '<label class="f">メールアドレス</label><input type="email" name="email" required value="' + esc(me.email) + '">' +
+    '<label class="f">自分のWebサイト / ポートフォリオ URL</label><input type="url" name="website" placeholder="https://your-website.com" value="' + esc(me.website || '') + '">' +
+    '<p class="hint">※登録すると「参加者の感想」カードにWebサイトへのリンクが表示されます。</p>' +
+    '<label class="f">自己紹介</label><textarea name="bio" maxlength="300">' + esc(me.bio) + '</textarea>' +
+    '<h2 class="mt">パスワード変更（任意）</h2><label class="f">現在のパスワード</label><input type="password" name="cur">' +
+    '<label class="f">新しいパスワード（8文字以上）</label><input type="password" name="npw">' +
+    '<div class="mt"><button class="btn">保存する</button></div></form></div>'));
+}
+function uploadView() {
+  return shell(page('<div class="card narrow"><h1>📸 旅の思い出・感想を投稿</h1><p class="lead">投稿先: <strong>' + esc(me.year) + '年</strong></p>' +
+    '<form data-form="upload"><label class="f">タイトル *</label><input type="text" name="title" maxlength="80" required>' +
+    '<label class="f">感想・コメント *</label><textarea name="desc" maxlength="1000" required></textarea>' +
+    '<label class="f">写真 (JPG / PNG / GIF / WEBP) *</label><input id="photoInput" type="file" name="photo" accept="image/*" required><img id="preview" class="preview" alt="preview">' +
+    '<div class="mt"><button class="btn">投稿する</button></div></form></div>'));
+}
+function myView() {
+  const rows = db.memories.filter(m => m.userId === me.id).slice().reverse().map(m =>
+    '<tr><td>' + thumb(m) + '</td><td><a href="#/memory/' + esc(m.id) + '">' + esc(m.title) + '</a></td><td>' + m.year + '</td><td>' + badge(m.status) + '</td><td>' + m.likes.length + '</td><td>' + db.comments.filter(c => c.memId === m.id).length + '</td>' +
+    '<td><button class="btn sm red" data-act="delMine" data-id="' + esc(m.id) + '">削除</button></td></tr>').join('') || '<tr><td colspan="7" class="center">まだ投稿がありません。</td></tr>';
+  return shell(page('<h1>📚 マイ思い出</h1><p class="lead">あなたが投稿した写真一覧です。 <a class="btn sm" href="#/upload">＋ 新しく感想・写真を投稿</a> <a class="btn sm ghost" href="#/profile">👤 プロフィール・WebサイトURL編集</a></p>' +
+    '<div class="card table-wrap"><table class="t"><tr><th>写真</th><th>タイトル</th><th>年度</th><th>状態</th><th>❤</th><th>💬</th><th></th></tr>' + rows + '</table></div>'));
+}
+
+/* ---------- 管理者ページ ---------- */
+function adminShell(active, body) {
+  const t = (k, href, label) => '<a href="' + href + '" class="' + (active === k ? 'active' : '') + '">' + label + '</a>';
+  return shell('<div class="subnav"><div class="subnav-inner">' + t('d', '#/admin', '📊 ダッシュボード') + t('y', '#/admin/years', '📅 年度管理') +
+    t('s', '#/admin/students', '🎓 学生管理') + t('m', '#/admin/memories', '📸 旅行記録') + t('c', '#/admin/comments', '💬 コメント') + '</div></div>' + page(body));
+}
+const studentsIn = y => db.users.filter(u => u.role === 'student' && u.year === y.year).length;
+
+function adminDash() {
+  const total = db.users.filter(u => u.role === 'student').length, pend = db.memories.filter(m => m.status === 'pending');
+  const per = yearsAll().map(y => {
+    const p = db.memories.filter(m => m.year === y.year && m.status === 'pending').length;
+    return '<tr><td><strong>' + y.year + '</strong> ' + (y.active ? '' : '<span class="badge off">非表示</span>') + '</td><td>' + studentsIn(y) + '</td><td>' +
+      db.memories.filter(m => m.year === y.year && m.status === 'approved').length + '</td><td>' + (p ? '<span class="badge pending">' + p + '</span>' : '0') + '</td></tr>';
+  }).join('');
+  const pr = pend.slice(0, 6).map(m => '<tr><td>' + thumb(m) + '</td><td><a href="#/memory/' + esc(m.id) + '">' + esc(m.title) + '</a><br><small>' + esc(authorName(user(m.userId))) + ' ・ ' + m.year + '年</small></td><td>' +
+    '<button class="btn sm green" data-act="setStatus" data-id="' + esc(m.id) + '" data-status="approved">承認</button> <button class="btn sm red" data-act="setStatus" data-id="' + esc(m.id) + '" data-status="rejected">却下</button></td></tr>').join('') ||
+    '<tr><td class="center">承認待ちの写真はありません 🎉</td></tr>';
+  return adminShell('d', '<h1>📊 ダッシュボード</h1><p class="lead">Administrator dashboard</p><div class="stats">' +
+    '<div class="stat"><b>' + total + '</b><span>登録学生数</span></div><div class="stat"><b>' + db.years.length + '</b><span>年度</span></div>' +
+    '<div class="stat"><b>' + db.memories.length + '</b><span>旅行記録（写真）</span></div><div class="stat warn"><b>' + pend.length + '</b><span>承認待ち</span></div>' +
+    '<div class="stat"><b>' + db.comments.length + '</b><span>コメント</span></div></div>' +
+    '<div class="card table-wrap"><h2>年度ごとの集計</h2><table class="t"><tr><th>年度 (Year)</th><th>登録学生数 (Registered students)</th><th>公開中の思い出 (Memories)</th><th>承認待ち</th></tr>' + per + '</table>' +
+    '<p class="mt"><a class="btn sm" href="#/admin/years">＋ 年度を追加</a></p></div>' +
+    '<div class="card table-wrap"><h2>承認待ちの写真</h2><table class="t">' + pr + '</table></div>');
+}
+function adminYears() {
+  const rows = yearsAll().reverse().map(y => '<tr><td><strong>' + y.year + '</strong></td><td>' + studentsIn(y) + '</td><td>' + db.memories.filter(m => m.year === y.year).length + '</td>' +
+    '<td><span class="badge ' + (y.active ? 'approved' : 'off') + '">' + (y.active ? '表示中' : '非表示') + '</span></td><td class="row">' +
+    '<a class="btn sm ghost" href="#/admin/students" data-act="filterYear" data-year="' + y.year + '">学生</a>' +
+    '<button class="btn sm gray" data-act="yearToggle" data-year="' + y.year + '">' + (y.active ? '非表示にする' : '表示する') + '</button>' +
+    '<button class="btn sm red" data-act="yearDel" data-year="' + y.year + '">削除</button></td></tr>').join('');
+  return adminShell('y', '<h1>📅 年度管理</h1><p class="lead">新しい年度を追加すると、トップページのドロップダウンと学生登録画面に自動で表示されます。</p>' +
+    '<div class="card"><h2>新しい年度を追加</h2><form data-form="addYear" class="row"><input type="number" name="year" min="2000" max="2100" placeholder="例: 2027" required style="max-width:180px;"><button class="btn">＋ 追加</button></form></div>' +
+    '<div class="card table-wrap"><h2>登録済みの年度</h2><table class="t"><tr><th>年度 (Year)</th><th>登録学生数</th><th>思い出（全件）</th><th>状態</th><th>操作</th></tr>' + rows + '</table></div>');
+}
+function adminStudents() {
+  let list = db.users.filter(u => u.role === 'student');
+  if (ui.sYear) list = list.filter(u => String(u.year) === String(ui.sYear));
+  if (ui.sQ) list = list.filter(u => (u.name + ' ' + u.email).toLowerCase().indexOf(ui.sQ.toLowerCase()) >= 0);
+  list.sort((a, b) => (b.year - a.year) || a.name.localeCompare(b.name));
+  const rows = list.map(s => '<tr><td>' + esc(s.name) + '</td><td>' + esc(s.email) + '</td><td>' + esc(s.year) + '</td><td>' +
+    (s.website ? '<a href="' + esc(s.website) + '" target="_blank" rel="noopener noreferrer">🌐 リンク</a>' : '-') + '</td><td>' +
+    db.memories.filter(m => m.userId === s.id).length + '</td><td class="row">' +
+    '<a class="btn sm ghost" href="#/admin/students/' + esc(s.id) + '">編集</a><button class="btn sm red" data-act="stuDel" data-id="' + esc(s.id) + '">削除</button></td></tr>').join('') ||
+    '<tr><td colspan="6" class="center">該当する学生がいません。</td></tr>';
+  return adminShell('s', '<h1>🎓 学生管理</h1><p class="lead">登録学生数: <strong>' + list.length + '</strong> 名 <a class="btn sm" href="#/admin/students/new">＋ 学生を登録</a></p>' +
+    '<form class="filters" data-form="stuFilter"><select name="year"><option value="">すべての年度</option>' + yearOptions(yearsAll(), ui.sYear) + '</select>' +
+    '<input type="search" name="q" value="' + esc(ui.sQ) + '" placeholder="名前・メールで検索"><button class="btn sm">検索</button></form>' +
+    '<div class="card table-wrap"><table class="t"><tr><th>名前</th><th>メール</th><th>年度</th><th>Webサイト</th><th>思い出</th><th>操作</th></tr>' + rows + '</table></div>');
+}
+function adminStudentForm(id) {
+  const isNew = id === 'new', s = isNew ? { name: '', email: '', year: '', website: '', bio: '' } : user(id);
+  if (!s || s.role === 'admin') return notFound();
+  return adminShell('s', '<h1>' + (isNew ? '➕ 学生を登録' : '✏️ 学生を編集') + '</h1><div class="card narrow"><form data-form="stuForm" data-id="' + esc(id) + '">' +
+    '<label class="f">名前</label><input type="text" name="name" required maxlength="50" value="' + esc(s.name) + '">' +
+    '<label class="f">メールアドレス</label><input type="email" name="email" required value="' + esc(s.email) + '">' +
+    '<label class="f">年度</label><select name="year" required><option value="">選択してください</option>' + yearOptions(yearsAll(), s.year) + '</select>' +
+    '<label class="f">Webサイト URL（任意）</label><input type="url" name="website" placeholder="https://example.com" value="' + esc(s.website || '') + '">' +
+    '<label class="f">' + (isNew ? 'パスワード（空欄なら自動生成）' : '新しいパスワード（変更する場合のみ）') + '</label><input type="text" name="pw" autocomplete="off">' +
+    '<label class="f">自己紹介・感想（任意）</label><textarea name="bio" maxlength="300">' + esc(s.bio) + '</textarea>' +
+    '<div class="mt row"><button class="btn">保存</button><a class="btn gray" href="#/admin/students">キャンセル</a></div></form></div>');
+}
+function adminMemories() {
+  let list = db.memories.slice();
+  if (ui.mYear) list = list.filter(m => String(m.year) === String(ui.mYear));
+  if (ui.mStatus) list = list.filter(m => m.status === ui.mStatus);
+  list.reverse().sort((a, b) => (b.status === 'pending') - (a.status === 'pending'));
+  const rows = list.map(m => '<tr><td>' + thumb(m) + '</td><td><a href="#/memory/' + esc(m.id) + '">' + esc(m.title) + '</a><br><small>' + esc(authorName(user(m.userId))) + '</small></td><td>' + m.year + '</td><td>' + badge(m.status) + '</td><td>' + m.likes.length + '</td><td>' + db.comments.filter(c => c.memId === m.id).length + '</td><td class="row">' +
+    (m.status !== 'approved' ? '<button class="btn sm green" data-act="setStatus" data-id="' + esc(m.id) + '" data-status="approved">承認</button>' : '') +
+    (m.status !== 'rejected' ? '<button class="btn sm gray" data-act="setStatus" data-id="' + esc(m.id) + '" data-status="rejected">却下</button>' : '') +
+    '<a class="btn sm ghost" href="#/admin/memories/' + esc(m.id) + '">編集</a><button class="btn sm red" data-act="memDel" data-id="' + esc(m.id) + '">削除</button></td></tr>').join('') ||
+    '<tr><td colspan="7" class="center">該当する記録がありません。</td></tr>';
+  const so = ['pending', 'approved', 'rejected'].map(k => '<option value="' + k + '"' + (ui.mStatus === k ? ' selected' : '') + '>' + STATUS[k] + '</option>').join('');
+  return adminShell('m', '<h1>📸 旅行記録の管理</h1><p class="lead">写真の承認・却下、タイトルと説明の編集、削除ができます。 <a class="btn sm" href="#/admin/memories/new">＋ 写真をアップロード</a></p>' +
+    '<form class="filters"><select data-filter="mYear"><option value="">すべての年度</option>' + yearOptions(yearsAll(), ui.mYear) + '</select>' +
+    '<select data-filter="mStatus"><option value="">すべての状態</option>' + so + '</select></form>' +
+    '<div class="card table-wrap"><table class="t"><tr><th>写真</th><th>タイトル / 投稿者</th><th>年度</th><th>状態</th><th>❤</th><th>💬</th><th>操作</th></tr>' + rows + '</table></div>');
+}
+function adminMemoryNew() {
+  const st = db.users.filter(u => u.role === 'student').sort((a, b) => (b.year - a.year) || a.name.localeCompare(b.name))
+    .map(s => '<option value="' + esc(s.id) + '">' + esc(s.name) + '（' + s.year + '年）</option>').join('');
+  return adminShell('m', '<h1>⬆️ 写真をアップロード（管理者）</h1><p class="lead">管理者がアップロードした写真は、すぐに公開されます。</p><div class="card narrow"><form data-form="memNew">' +
+    '<label class="f">年度</label><select name="year" required><option value="">選択してください</option>' + yearOptions(yearsAll(), '') + '</select>' +
+    '<label class="f">学生（任意）</label><select name="user"><option value="">管理者（公式写真）</option>' + st + '</select>' +
+    '<label class="f">タイトル</label><input type="text" name="title" maxlength="80" required><label class="f">説明</label><textarea name="desc" maxlength="1000"></textarea>' +
+    '<label class="f">写真</label><input id="photoInput" type="file" name="photo" accept="image/*" required><img id="preview" class="preview" alt="preview">' +
+    '<div class="mt row"><button class="btn">アップロードして公開</button><a class="btn gray" href="#/admin/memories">キャンセル</a></div></form></div>');
+}
+function adminMemoryEdit(id) {
+  const m = mem(id); if (!m) return notFound();
+  const so = ['pending', 'approved', 'rejected'].map(k => '<option value="' + k + '"' + (m.status === k ? ' selected' : '') + '>' + STATUS[k] + '</option>').join('');
+  return adminShell('m', '<h1>✏️ 旅行記録を編集</h1><div class="card narrow"><img class="memory-photo" style="max-height:240px;" src="' + esc(m.photo) + '" alt="">' +
+    '<p class="meta">投稿者: ' + esc(authorName(user(m.userId))) + ' ・ ' + esc(m.created) + '</p><form data-form="memEdit" data-id="' + esc(id) + '">' +
+    '<label class="f">タイトル</label><input type="text" name="title" maxlength="80" required value="' + esc(m.title) + '">' +
+    '<label class="f">説明・感想</label><textarea name="desc" maxlength="1000">' + esc(m.desc) + '</textarea>' +
+    '<label class="f">年度</label><select name="year">' + yearOptions(yearsAll(), m.year) + '</select><label class="f">状態</label><select name="status">' + so + '</select>' +
+    '<div class="mt row"><button class="btn">保存</button><a class="btn gray" href="#/admin/memories">キャンセル</a></div></form></div>');
+}
+function adminComments() {
+  const rows = db.comments.slice().reverse().map(c => { const m = mem(c.memId); return '<tr><td>' + esc(user(c.userId) ? user(c.userId).name : '?') + '</td><td style="max-width:340px;white-space:pre-wrap;">' + esc(c.body) + '</td><td>' +
+    (m ? '<a href="#/memory/' + esc(m.id) + '">' + esc(m.title) + '</a> (' + m.year + ')' : '-') + '</td><td>' + esc(c.created) + '</td><td><button class="btn sm red" data-act="delComment" data-id="' + esc(c.id) + '">削除</button></td></tr>'; }).join('') ||
+    '<tr><td colspan="5" class="center">コメントはまだありません。</td></tr>';
+  return adminShell('c', '<h1>💬 コメント管理</h1><p class="lead">不適切なコメントを削除できます。（全 ' + db.comments.length + ' 件）</p><div class="card table-wrap"><table class="t"><tr><th>投稿者</th><th>コメント</th><th>投稿先</th><th>日時</th><th></th></tr>' + rows + '</table></div>');
+}
+
+/* =====================================================================
+   ルーター
+   ===================================================================== */
+let pendingScroll = false;
+function render() {
+  const sid = sessionStorage.getItem(SKEY);
+  me = (sid && user(sid)) || null;
+  const p = (location.hash.replace(/^#/, '') || '/').split('/').filter(Boolean);
+  const a = p[0] || '', b = p[1];
+  const needAdmin = a === 'admin', needStudent = ['profile', 'upload', 'my'].indexOf(a) >= 0;
+  let html;
+  if (needAdmin && (!me || me.role !== 'admin')) { flash('管理者としてログインしてください', 'error'); return go('#/admin-login'); }
+  if (needStudent && (!me || me.role !== 'student')) { flash('学生としてログインしてください', 'error'); return go('#/login'); }
+  pendingScroll = false;
+  if (a === '' ) html = homeView();
+  else if (a === 'reviews') { html = homeView(); pendingScroll = true; }
+  else if (a === 'login') html = me && me.role === 'student' ? (go('#/my'), '') : loginView('student');
+  else if (a === 'admin-login') html = me && me.role === 'admin' ? (go('#/admin'), '') : loginView('admin');
+  else if (a === 'register') html = registerView();
+  else if (a === 'memory') html = memoryView(b);
+  else if (a === 'profile') html = profileView();
+  else if (a === 'upload') html = uploadView();
+  else if (a === 'my') html = myView();
+  else if (a === 'admin') {
+    if (!b) html = adminDash();
+    else if (b === 'years') html = adminYears();
+    else if (b === 'students') html = p[2] ? adminStudentForm(p[2]) : adminStudents();
+    else if (b === 'memories') html = p[2] === 'new' ? adminMemoryNew() : (p[2] ? adminMemoryEdit(p[2]) : adminMemories());
+    else if (b === 'comments') html = adminComments();
+    else html = notFound();
+  } else html = notFound();
+  document.getElementById('app').innerHTML = html;
+  if (pendingScroll) { const r = document.getElementById('reviews'); if (r) r.scrollIntoView(); } else window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', render);
+
+/* =====================================================================
+   ボタン操作 (data-act)
+   ===================================================================== */
+function cascadeDeleteMemory(id) {
+  db.memories = db.memories.filter(m => m.id !== id);
+  db.comments = db.comments.filter(c => c.memId !== id);
+}
+const actions = {
+  logout() { sessionStorage.removeItem(SKEY); go(me && me.role === 'admin' ? '#/admin-login' : '#/'); },
+  openModal(id) {
+    const m = mem(id); if (!m) return;
+    const u = user(m.userId);
+    document.getElementById('modalImg').src = m.photo;
+    document.getElementById('modalTitle').textContent = m.title;
+    document.getElementById('modalMeta').textContent = authorName(u) + ' ・ ' + m.year + '年';
+    
+    const bioEl = document.getElementById('modalBio');
+    if (u && u.bio) {
+      bioEl.textContent = '👤 ' + u.bio;
+      bioEl.style.display = 'block';
+    } else {
+      bioEl.style.display = 'none';
+    }
+
+    document.getElementById('modalCaption').textContent = m.desc ? '「 ' + m.desc + ' 」' : '';
+    
+    const webEl = document.getElementById('modalWebsite');
+    if (u && u.website) {
+      webEl.href = u.website;
+      webEl.style.display = 'inline-block';
+    } else {
+      webEl.style.display = 'none';
+    }
+
+    document.getElementById('modalLink').href = '#/memory/' + m.id;
+    document.getElementById('photoModal').style.display = 'flex';
+  },
+  closeModal() { document.getElementById('photoModal').style.display = 'none'; },
+  backToYear(id, t) { ui.homeYear = +t.dataset.year; },
+  like(id) {
+    const m = mem(id); if (!m || !me || me.role !== 'student') return;
+    const i = m.likes.indexOf(me.id); if (i >= 0) m.likes.splice(i, 1); else m.likes.push(me.id);
+    save(); render();
+  },
+  delComment(id) {
+    const c = db.comments.find(x => x.id === id); if (!c || !me) return;
+    if (me.role !== 'admin' && me.id !== c.userId) return;
+    if (!confirm('このコメントを削除しますか？')) return;
+    db.comments = db.comments.filter(x => x.id !== id); save(); flash('コメントを削除しました'); render();
+  },
+  delMine(id) {
+    const m = mem(id); if (!m || !me || m.userId !== me.id) return;
+    if (!confirm('削除しますか？')) return;
+    cascadeDeleteMemory(id); save(); flash('削除しました'); render();
+  },
+  setStatus(id, t) {
+    const m = mem(id); if (!m) return;
+    m.status = t.dataset.status; save();
+    flash(m.status === 'approved' ? '承認しました ✅' : '却下しました'); render();
+  },
+  memDel(id) { if (!confirm('この記録を削除しますか？')) return; cascadeDeleteMemory(id); save(); flash('削除しました'); render(); },
+  yearToggle(id, t) {
+    const y = db.years.find(x => String(x.year) === t.dataset.year); y.active = !y.active; save();
+    flash(y.year + '年度を' + (y.active ? '表示' : '非表示') + 'にしました'); render();
+  },
+  yearDel(id, t) {
+    const y = db.years.find(x => String(x.year) === t.dataset.year);
+    if (db.users.some(u => u.year === y.year) || db.memories.some(m => m.year === y.year)) { flash('学生または思い出が登録されている年度は削除できません（非表示にできます）', 'error'); return render(); }
+    if (!confirm(y.year + '年度を削除しますか？')) return;
+    db.years = db.years.filter(x => x !== y); save(); flash(y.year + '年度を削除しました'); render();
+  },
+  filterYear(id, t) { ui.sYear = t.dataset.year; ui.sQ = ''; },
+  stuDel(id) {
+    const s = user(id); if (!s || s.role !== 'student') return;
+    if (!confirm(s.name + ' のアカウントと投稿・コメントをすべて削除します。よろしいですか？')) return;
+    db.memories.filter(m => m.userId === id).forEach(m => cascadeDeleteMemory(m.id));
+    db.comments = db.comments.filter(c => c.userId !== id);
+    db.memories.forEach(m => { m.likes = m.likes.filter(x => x !== id); });
+    db.users = db.users.filter(u => u.id !== id); save(); flash(s.name + ' のアカウントを削除しました'); render();
+  }
+};
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]');
+  if (t && actions[t.dataset.act]) actions[t.dataset.act](t.dataset.id, t, e);
+  if (e.target.id === 'photoModal') actions.closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') actions.closeModal(); });
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.id === 'yearSel') { ui.homeYear = +t.value; document.getElementById('reviewsBox').innerHTML = reviewsBox(); }
+  else if (t.id === 'regYearSelect') {
+    const box = document.getElementById('regCustomYearBox');
+    const inp = document.getElementById('regCustomYear');
+    if (t.value === 'new') { box.style.display = 'block'; inp.required = true; }
+    else { box.style.display = 'none'; inp.required = false; }
+  }
+  else if (t.dataset && t.dataset.filter) { ui[t.dataset.filter] = t.value; render(); }
+  else if (t.id === 'photoInput' && t.files && t.files[0]) { const pv = document.getElementById('preview'); pv.src = URL.createObjectURL(t.files[0]); pv.style.display = 'block'; }
+  else if (t.id === 'regPhotoInput' && t.files && t.files[0]) { const pv = document.getElementById('regPreview'); pv.src = URL.createObjectURL(t.files[0]); pv.style.display = 'block'; }
+});
+
+/* =====================================================================
+   フォーム送信 (data-form)
+   ===================================================================== */
+const val = (f, n) => (f.elements[n] ? f.elements[n].value : '').trim();
+function err(m) { flash(m, 'error'); render(); }
+const randPw = () => { const a = 'abcdefghijkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let s = ''; const r = crypto.getRandomValues(new Uint8Array(10)); r.forEach(x => s += a[x % a.length]); return s; };
+
+const forms = {
+  async login(f) {
+    const role = f.dataset.role, email = val(f, 'email').toLowerCase(), pw = f.elements.password.value;
+    const u = db.users.find(x => x.email === email), h = await hashPw(email, pw);
+    if (!u || u.pass !== h) return err('メールアドレスまたはパスワードが違います');
+    if (u.role !== role) return err('このアカウントはこのログイン画面では使えません。' + (u.role === 'admin' ? '管理者ログインをご利用ください。' : '学生ログインをご利用ください。'));
+    sessionStorage.setItem(SKEY, u.id); go(role === 'admin' ? '#/admin' : '#/my');
+  },
+  async register(f) {
+    const name = val(f, 'name'), email = val(f, 'email').toLowerCase(), pw = f.elements.password.value;
+    const rawYear = f.elements.year.value;
+    let year = rawYear === 'new' ? +f.elements.custom_year.value : +rawYear;
+    const website = normalizeUrl(val(f, 'website'));
+    const bio = val(f, 'bio').slice(0, 500);
+    const title = val(f, 'title') || (name + 'さんの研修旅行の感想');
+    const e = [];
+    if (!name) e.push('名前を入力してください');
+    if (!EMAIL_RE.test(email)) e.push('メールアドレスの形式が正しくありません');
+    if (pw.length < 8) e.push('パスワードは8文字以上にしてください');
+    if (rawYear === 'new') {
+      if (!year || year < 2000 || year > 2100) e.push('新しい年度は 2000〜2100 の数字で入力してください');
+    } else if (!yearsActive().some(y => y.year === year)) {
+      e.push('参加年度を選択してください');
+    }
+    if (db.users.some(u => u.email === email)) e.push('このメールアドレスは既に登録されています');
+    if (e.length) return err(e.join(' / '));
+
+    let photo = DEFAULT_PHOTO;
+    if (f.elements.photo && f.elements.photo.files && f.elements.photo.files[0]) {
+      try { photo = await readImage(f.elements.photo.files[0]); }
+      catch (m) { return err(String(m)); }
+    }
+
+    if (!db.years.some(y => y.year === year)) {
+      db.years.push({ year, active: true });
+    }
+    const newUid = uid();
+    const u = { id: newUid, name, email, pass: await hashPw(email, pw), role: 'student', year, bio, website, created: now() };
+    db.users.push(u);
+
+    // 登録完了後、参加者の感想一覧にも反映
+    db.memories.push({
+      id: 'm_' + uid(),
+      userId: newUid,
+      year,
+      title,
+      desc: bio || '清水・駿河湾クルーズ研修旅行に参加しました！',
+      photo,
+      status: 'approved',
+      created: now(),
+      likes: []
     });
 
-    // Modal Functions
-    function openModal(imgSrc, titleText, captionText) {
-      const modal = document.getElementById('photoModal');
-      const modalImg = document.getElementById('modalImg');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalCaption = document.getElementById('modalCaption');
-      
-      modal.style.display = 'flex';
-      modalImg.src = imgSrc;
-      modalTitle.textContent = titleText;
-      modalCaption.textContent = "「 " + captionText + " 」";
+    if (!save()) return;
+    ui.homeYear = year;
+    sessionStorage.setItem(SKEY, u.id);
+    flash(name + 'さんのアカウント登録が完了しました 🎉 「マイ思い出」や「プロフィール・URL編集」からいつでも編集できます。');
+    go('#/my');
+  },
+  async profile(f) {
+    const name = val(f, 'name'), email = val(f, 'email').toLowerCase(), npw = f.elements.npw.value, e = [];
+    if (!name) e.push('名前を入力してください');
+    if (!EMAIL_RE.test(email)) e.push('メールアドレスの形式が正しくありません');
+    if (db.users.some(u => u.email === email && u.id !== me.id)) e.push('このメールアドレスは既に使われています');
+    if (npw) {
+      if (me.pass !== await hashPw(me.email, f.elements.cur.value)) e.push('現在のパスワードが違います');
+      if (npw.length < 8) e.push('新しいパスワードは8文字以上にしてください');
     }
+    if (e.length) return err(e.join(' / '));
+    me.name = name;
+    me.bio = val(f, 'bio').slice(0, 300);
+    me.website = normalizeUrl(val(f, 'website'));
+    me.email = email;
+    if (npw) me.pass = await hashPw(email, npw);
+    save(); flash('プロフィールとWebサイトURLを更新しました'); render();
+  },
+  async upload(f) {
+    const title = val(f, 'title'); if (!title) return err('タイトルを入力してください');
+    try {
+      const photo = await readImage(f.elements.photo.files[0]);
+      db.memories.push({ id: uid(), userId: me.id, year: me.year, title, desc: val(f, 'desc').slice(0, 1000), photo, status: 'approved', created: now(), likes: [] });
+      if (!save()) { db.memories.pop(); return; }
+      ui.homeYear = me.year;
+      flash('投稿が完了しました 🎉'); go('#/my');
+    } catch (m) { err(String(m)); }
+  },
+  comment(f) {
+    const m = mem(f.dataset.id), body = val(f, 'body');
+    if (!m || m.status !== 'approved' || !me || me.role !== 'student') return;
+    if (!body || body.length > 500) return err('コメントは1〜500文字で入力してください');
+    db.comments.push({ id: uid(), memId: m.id, userId: me.id, body, created: now() }); save(); flash('コメントを投稿しました'); render();
+  },
+  addYear(f) {
+    const y = +f.elements.year.value;
+    if (!y || y < 2000 || y > 2100) return err('年度は 2000〜2100 の数字で入力してください');
+    if (db.years.some(x => x.year === y)) return err(y + '年度は既に登録されています');
+    db.years.push({ year: y, active: true }); save(); flash(y + '年度を追加しました。'); render();
+  },
+  stuFilter(f) { ui.sYear = f.elements.year.value; ui.sQ = f.elements.q.value.trim(); render(); },
+  async stuForm(f) {
+    const id = f.dataset.id, isNew = id === 'new', name = val(f, 'name'), email = val(f, 'email').toLowerCase(), year = +f.elements.year.value;
+    const website = normalizeUrl(val(f, 'website'));
+    const bio = val(f, 'bio').slice(0, 300);
+    let pw = f.elements.pw.value; const e = [];
+    if (isNew && !pw) pw = randPw();
+    if (!name) e.push('名前を入力してください');
+    if (!EMAIL_RE.test(email)) e.push('メールアドレスの形式が正しくありません');
+    if (pw && pw.length < 8) e.push('パスワードは8文字以上にしてください');
+    if (!db.years.some(y => y.year === year)) e.push('年度を選択してください');
+    if (db.users.some(u => u.email === email && u.id !== id)) e.push('このメールアドレスは既に使われています');
+    if (e.length) return err(e.join(' / '));
+    if (isNew) {
+      const newUid = uid();
+      db.users.push({ id: newUid, name, email, pass: await hashPw(email, pw), role: 'student', year, website, bio, created: now() });
+      db.memories.push({
+        id: 'm_' + uid(),
+        userId: newUid,
+        year,
+        title: name + 'さんの研修旅行の感想',
+        desc: bio || '清水・駿河湾クルーズ研修旅行に参加しました！',
+        photo: DEFAULT_PHOTO,
+        status: 'approved',
+        created: now(),
+        likes: []
+      });
+      ui.homeYear = year;
+      save(); flash('学生を登録しました。ログイン: ' + email + ' / 初期パスワード: ' + pw);
+    } else {
+      const s = user(id); if (!s) return;
+      s.name = name; s.email = email; s.year = year; s.website = website; s.bio = bio;
+      if (pw) s.pass = await hashPw(email, pw);
+      db.memories.filter(m => m.userId === id).forEach(m => { m.year = year; });
+      save(); flash('学生情報を更新しました');
+    }
+    go('#/admin/students');
+  },
+  async memNew(f) {
+    const year = +f.elements.year.value, title = val(f, 'title'), who = f.elements.user.value || 'admin';
+    if (!title) return err('タイトルを入力してください');
+    try {
+      const photo = await readImage(f.elements.photo.files[0]);
+      db.memories.push({ id: uid(), userId: who, year, title, desc: val(f, 'desc').slice(0, 1000), photo, status: 'approved', created: now(), likes: [] });
+      if (!save()) { db.memories.pop(); return; }
+      ui.homeYear = year;
+      flash('写真を公開しました'); go('#/admin/memories');
+    } catch (m) { err(String(m)); }
+  },
+  memEdit(f) {
+    const m = mem(f.dataset.id), title = val(f, 'title'); if (!m) return;
+    if (!title) return err('タイトルを入力してください');
+    m.title = title; m.desc = val(f, 'desc').slice(0, 1000); m.year = +f.elements.year.value; m.status = f.elements.status.value;
+    save(); flash('更新しました'); go('#/admin/memories');
+  }
+};
+document.addEventListener('submit', e => {
+  const f = e.target.closest('form[data-form]'); if (!f) return;
+  e.preventDefault(); forms[f.dataset.form](f);
+});
 
-    function closeModal() {
-      const modal = document.getElementById('photoModal');
-      modal.style.display = 'none';
-    }
+/* ---------- 起動 ---------- */
+(async function init() {
+  try { db = JSON.parse(localStorage.getItem(KEY)); } catch (e) { db = null; }
+  if (!db || !db.users) { db = await makeSeed(); save(); }
+  render();
+})();
+})();
   </script>
-
 </body>
 </html>
