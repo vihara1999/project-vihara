@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}プロフィール編集{% endblock %}
+{% block content %}
+<div class="page">
+  <div class="card narrow">
+    <h1>👤 プロフィール編集</h1>
+    <p class="lead">Edit Profile{% if year %} ・ 参加年度: {{ year.year }}年{% endif %}</p>
+    <form method="post">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <label class="f" for="name">名前</label>
+      <input id="name" type="text" name="name" maxlength="50" required value="{{ me.name }}">
+      <label class="f" for="email">メールアドレス</label>
+      <input id="email" type="email" name="email" required value="{{ me.email }}">
+      <label class="f" for="bio">自己紹介</label>
+      <textarea id="bio" name="bio" maxlength="300">{{ me.bio }}</textarea>
+      <h2 class="mt">パスワード変更（任意）</h2>
+      <label class="f" for="current_password">現在のパスワード</label>
+      <input id="current_password" type="password" name="current_password" autocomplete="current-password">
+      <label class="f" for="new_password">新しいパスワード（8文字以上）</label>
+      <input id="new_password" type="password" name="new_password" autocomplete="new-password">
+      <div class="mt"><button class="btn">保存する</button></div>
+    </form>
+  </div>
+</div>
+{% endblock %}

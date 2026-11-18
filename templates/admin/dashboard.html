@@ -1,0 +1,53 @@
+{% extends "admin/base.html" %}
+{% block title %}管理ダッシュボード{% endblock %}
+{% block admin %}
+<h1>📊 ダッシュボード</h1>
+<p class="lead">Administrator dashboard</p>
+
+<div class="stats">
+  <div class="stat"><b>{{ stats.students }}</b><span>登録学生数</span></div>
+  <div class="stat"><b>{{ stats.years }}</b><span>年度</span></div>
+  <div class="stat"><b>{{ stats.memories }}</b><span>旅行記録（写真）</span></div>
+  <div class="stat warn"><b>{{ stats.pending }}</b><span>承認待ち</span></div>
+  <div class="stat"><b>{{ stats.comments }}</b><span>コメント</span></div>
+</div>
+
+<div class="card table-wrap">
+  <h2>年度ごとの集計</h2>
+  <table class="t">
+    <tr><th>年度 (Year)</th><th>登録学生数 (Registered students)</th><th>公開中の思い出 (Memories)</th><th>承認待ち</th></tr>
+    {% for y in per_year %}
+    <tr>
+      <td><strong>{{ y.year }}</strong> {% if not y.is_active %}<span class="badge off">非表示</span>{% endif %}</td>
+      <td>{{ y.students }}</td><td>{{ y.memories }}</td>
+      <td>{% if y.pending %}<span class="badge pending">{{ y.pending }}</span>{% else %}0{% endif %}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p class="mt"><a class="btn sm" href="{{ url_for('admin_years') }}">＋ 年度を追加</a></p>
+</div>
+
+<div class="card table-wrap">
+  <h2>承認待ちの写真</h2>
+  <table class="t">
+    {% for m in pending %}
+    <tr>
+      <td><img class="thumb" src="{{ m.photo|photo_url }}" alt=""></td>
+      <td><a href="{{ url_for('memory_view', mid=m.id) }}">{{ m.title }}</a><br><small>{{ m.author }} ・ {{ m.year_num }}年</small></td>
+      <td>
+        {% for st, label, cls in [('approved','承認','green'),('rejected','却下','red')] %}
+        <form class="inline" method="post" action="{{ url_for('admin_memory_status', mid=m.id) }}">
+          <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+          <input type="hidden" name="status" value="{{ st }}">
+          <input type="hidden" name="next" value="{{ request.path }}">
+          <button class="btn sm {{ cls }}">{{ label }}</button>
+        </form>
+        {% endfor %}
+      </td>
+    </tr>
+    {% else %}
+    <tr><td class="center">承認待ちの写真はありません 🎉</td></tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+{% block title %}旅行記録を編集{% endblock %}
+{% block admin %}
+<h1>✏️ 旅行記録を編集</h1>
+<div class="card narrow">
+  <img class="memory-photo" style="max-height:240px;" src="{{ m.photo|photo_url }}" alt="">
+  <p class="meta">投稿者: {{ m.author }} ・ {{ m.created_at }}</p>
+  <form method="post">
+    <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+    <label class="f" for="title">タイトル</label>
+    <input id="title" type="text" name="title" maxlength="80" required value="{{ m.title }}">
+    <label class="f" for="description">説明・感想</label>
+    <textarea id="description" name="description" maxlength="1000">{{ m.description }}</textarea>
+    <label class="f" for="year_id">年度</label>
+    <select id="year_id" name="year_id">
+      {% for y in years %}<option value="{{ y.id }}" {{ 'selected' if y.id == m.year_id }}>{{ y.year }}年</option>{% endfor %}
+    </select>
+    <label class="f" for="status">状態</label>
+    <select id="status" name="status">
+      <option value="pending" {{ 'selected' if m.status == 'pending' }}>承認待ち</option>
+      <option value="approved" {{ 'selected' if m.status == 'approved' }}>公開中（承認）</option>
+      <option value="rejected" {{ 'selected' if m.status == 'rejected' }}>却下</option>
+    </select>
+    <div class="mt row"><button class="btn">保存</button><a class="btn gray" href="{{ url_for('admin_memories') }}">キャンセル</a></div>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}写真を投稿{% endblock %}
+{% block content %}
+<div class="page">
+  <div class="card narrow">
+    <h1>📸 旅の思い出を投稿</h1>
+    <p class="lead">投稿先: <strong>{{ year.year }}年</strong> ・ 管理者の承認後に公開されます。</p>
+    <form method="post" enctype="multipart/form-data">
+      <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+      <label class="f" for="title">タイトル</label>
+      <input id="title" type="text" name="title" maxlength="80" required>
+      <label class="f" for="description">感想・コメント</label>
+      <textarea id="description" name="description" maxlength="1000"></textarea>
+      <label class="f" for="photoInput">写真 (JPG / PNG / GIF / WEBP, 5MBまで)</label>
+      <input id="photoInput" type="file" name="photo" accept="image/*" required>
+      <img id="preview" class="preview" alt="preview">
+      <div class="mt"><button class="btn">アップロード</button></div>
+    </form>
+  </div>
+</div>
+{% endblock %}

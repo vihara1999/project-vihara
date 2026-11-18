@@ -1,0 +1,40 @@
+{% extends "admin/base.html" %}
+{% block title %}年度管理{% endblock %}
+{% block admin %}
+<h1>📅 年度管理</h1>
+<p class="lead">新しい年度を追加すると、トップページのドロップダウンと学生登録画面に自動で表示されます（コードの変更は不要）。</p>
+
+<div class="card">
+  <h2>新しい年度を追加</h2>
+  <form method="post" class="row">
+    <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+    <input type="number" name="year" min="2000" max="2100" placeholder="例: 2027" required style="max-width:180px;">
+    <button class="btn">＋ 追加</button>
+  </form>
+</div>
+
+<div class="card table-wrap">
+  <h2>登録済みの年度</h2>
+  <table class="t">
+    <tr><th>年度 (Year)</th><th>登録学生数</th><th>思い出（全件）</th><th>状態</th><th>操作</th></tr>
+    {% for y in years %}
+    <tr>
+      <td><strong>{{ y.year }}</strong></td><td>{{ y.students }}</td><td>{{ y.memories }}</td>
+      <td><span class="badge {{ 'approved' if y.is_active else 'off' }}">{{ '表示中' if y.is_active else '非表示' }}</span></td>
+      <td class="row">
+        <a class="btn sm ghost" href="{{ url_for('admin_students', year_id=y.id) }}">学生</a>
+        <form class="inline" method="post" action="{{ url_for('admin_year_toggle', yid=y.id) }}">
+          <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+          <button class="btn sm gray">{{ '非表示にする' if y.is_active else '表示する' }}</button>
+        </form>
+        <form class="inline" method="post" action="{{ url_for('admin_year_delete', yid=y.id) }}" onsubmit="return confirm('{{ y.year }}年度を削除しますか？')">
+          <input type="hidden" name="_csrf" value="{{ csrf_token() }}">
+          <button class="btn sm red">削除</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p class="hint mt">※学生や思い出が登録されている年度は削除できません。その場合は「非表示」にしてください。</p>
+</div>
+{% endblock %}
